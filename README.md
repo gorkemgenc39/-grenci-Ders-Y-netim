@@ -25,31 +25,31 @@ public class Ogrenci : BaseClass, IPerson
     public string OgrenciNo { get; set; }
     public override void BilgiGoster()
     {
-        Console.WriteLine($"\u00d6\u011frenci: {Ad} {Soyad}, No: {OgrenciNo}");
+        Console.WriteLine($"Öğrenci: {Ad} {Soyad}, No: {OgrenciNo}");
     }
 
     public void GirisYap()
     {
-        Console.WriteLine("\u00d6\u011frenci giri\u015fi yap\u0131ld\u0131.");
+        Console.WriteLine("Öğrenci girişi yapıldı.");
     }
 }
 
-// \u00d6\u011fretim G\u00f6revlisi s\u0131n\u0131f\u0131
+// Öğretim Görevlisi sınıfı
 public class OgretimGorevlisi : BaseClass, IPerson
 {
     public string Unvan { get; set; }
     public override void BilgiGoster()
     {
-        Console.WriteLine($"\u00d6\u011fretim G\u00f6revlisi: {Unvan} {Ad} {Soyad}");
+        Console.WriteLine($"Öğretim Görevlisi: {Unvan} {Ad} {Soyad}");
     }
 
     public void GirisYap()
     {
-        Console.WriteLine("\u00d6\u011fretim g\u00f6revlisi giri\u015fi yap\u0131ld\u0131.");
+        Console.WriteLine("Öğretim görevlisi girişi yapıldı.");
     }
 }
 
-// Ders s\u0131n\u0131f\u0131
+// Ders sınıfı
 public class Ders
 {
     public string DersAdi { get; set; }
@@ -60,8 +60,8 @@ public class Ders
     public void DersBilgisiGoster()
     {
         Console.WriteLine($"Ders: {DersAdi}, Kredi: {Kredi}");
-        Console.WriteLine($"\u00d6\u011fretim G\u00f6revlisi: {Ogretmen.Ad} {Ogretmen.Soyad}");
-        Console.WriteLine("Kay\u0131tl\u0131 \u00d6\u011frenciler:");
+        Console.WriteLine($"Öğretim Görevlisi: {Ogretmen.Ad} {Ogretmen.Soyad}");
+        Console.WriteLine("Kayıtlı Öğrenciler:");
         foreach (var ogrenci in Ogrenciler)
         {
             Console.WriteLine($"- {ogrenci.Ad} {ogrenci.Soyad}");
@@ -69,7 +69,7 @@ public class Ders
     }
 }
 
-// Dosya y\u00f6netimi s\u0131n\u0131f\u0131
+// Dosya yönetimi sınıfı
 public static class DosyaYonetimi
 {
     public static void JsonKaydet<T>(string dosyaAdi, T veri)
@@ -105,14 +105,14 @@ public static class DosyaYonetimi
     }
 }
 
-// Program s\u0131n\u0131f\u0131
+// Program sınıfı
 class Program
 {
     static void Main()
     {
-        // \u00d6rnek veri olu\u015fturma
-        var ogrenci1 = new Ogrenci { Id = 1, Ad = "Ahmet", Soyad = "Y\u0131lmaz", OgrenciNo = "202301" };
-        var ogrenci2 = new Ogrenci { Id = 2, Ad = "Ay\u015fe", Soyad = "Demir", OgrenciNo = "202302" };
+        // Örnek veri oluşturma
+        var ogrenci1 = new Ogrenci { Id = 1, Ad = "Ahmet", Soyad = "Yılmaz", OgrenciNo = "202301" };
+        var ogrenci2 = new Ogrenci { Id = 2, Ad = "Ayşe", Soyad = "Demir", OgrenciNo = "202302" };
         var ogretmen = new OgretimGorevlisi { Id = 1, Ad = "Mehmet", Soyad = "Kaya", Unvan = "Prof. Dr." };
 
         var ders = new Ders { DersAdi = "Matematik", Kredi = 4, Ogretmen = ogretmen };
